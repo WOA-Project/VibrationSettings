@@ -13,10 +13,13 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 using RegistryRT;
+using Windows.ApplicationModel.Core;
+using Windows.UI.ViewManagement;
+using Windows.UI;
 
 // The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
-namespace VibrationSettings
+namespace Vibration
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
@@ -34,6 +37,9 @@ namespace VibrationSettings
             regrt.InitNTDLLEntryPoints();
 
             this.InitializeComponent();
+            CoreApplication.GetCurrentView().TitleBar.ExtendViewIntoTitleBar = true;
+            ApplicationView.GetForCurrentView().TitleBar.ButtonBackgroundColor = Colors.Transparent;
+            ApplicationView.GetForCurrentView().TitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
 
             var result = ReadRegistryDwordFromVibra("Enabled");
             if (result != -1)
@@ -95,10 +101,13 @@ namespace VibrationSettings
                 var vibration = await Windows.Devices.Haptics.VibrationDevice.RequestAccessAsync();
                 if (vibration == Windows.Devices.Haptics.VibrationAccessStatus.Allowed)
                 {
-                    var vibrationdevice = (await Windows.Devices.Haptics.VibrationDevice.GetDefaultAsync());
-                    var feedback = vibrationdevice.SimpleHapticsController.SupportedFeedback.First();
+                    var vibrationdevice = await Windows.Devices.Haptics.VibrationDevice.GetDefaultAsync();
+                    if (vibrationdevice != null)
+                    {
+                        var feedback = vibrationdevice.SimpleHapticsController.SupportedFeedback.First();
 
-                    vibrationdevice.SimpleHapticsController.SendHapticFeedbackForDuration(feedback, IntensitySlider.Value / 100d, new TimeSpan((long)DurationSlider.Value * 1000000L));
+                        vibrationdevice.SimpleHapticsController.SendHapticFeedbackForDuration(feedback, IntensitySlider.Value / 100d, new TimeSpan((long)DurationSlider.Value * 1000000L));
+                    }
                 }
             }
             catch

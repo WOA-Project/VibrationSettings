@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29209.152
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VibrationSettings", "VibrationSettings.csproj", "{2055B9F5-A4A0-4855-A92B-E2D7B0262F9C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vibration", "Vibration.csproj", "{2055B9F5-A4A0-4855-A92B-E2D7B0262F9C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RegistryRT", "RegistryRT\RegistryRT.vcxproj", "{84A7225C-2DAF-410D-AB85-282AB220A89F}"
 EndProject

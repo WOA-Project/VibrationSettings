@@ -8,14 +8,14 @@
   IgnorableNamespaces="rescap uap mp">
 
   <Identity
-    Name="LumiaWOA.VibrationSettings"
-    Publisher="CN=Windows On Lumia Second Party Application Publisher"
+    Name="LumiaWOA.Vibration"
+    Publisher="CN=Windows On Lumia Development Second Party Software 2020"
     Version="1.0.8.0" />
 
   <mp:PhoneIdentity PhoneProductId="89192fb3-1554-4f20-b544-02197ba72c88" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Vibration Settings</DisplayName>
+    <DisplayName>Vibration</DisplayName>
     <PublisherDisplayName>LumiaWOA</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
@@ -31,15 +31,15 @@
   <Applications>
     <Application Id="App"
       Executable="$targetnametoken$.exe"
-      EntryPoint="VibrationSettings.App">
+      EntryPoint="Vibration.App">
       <uap:VisualElements
         AppListEntry="none"
-        DisplayName="Vibration Settings"
+        DisplayName="Vibration"
         Square150x150Logo="Assets\Square150x150Logo.png"
         Square44x44Logo="Assets\Square44x44Logo.png"
-        Description="Vibration Settings"
+        Description="Vibration"
         BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png" ShortName="Advanced Info">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png" ShortName="Vibration">
           <uap:ShowNameOnTiles>
             <uap:ShowOn Tile="square150x150Logo"/>
             <uap:ShowOn Tile="wide310x150Logo"/>
@@ -51,7 +51,16 @@
 
       <Extensions>
         <rescap:Extension Category="windows.settingsApp">
-          <rescap:SettingsApp Category="extras"/>
+          <rescap:SettingsApp SettingsPageUri="ms-settings:notifications">
+            <rescap:AppLinks>
+              <rescap:Link AppActivationMode="main" DisplayName="Configure vibration motor intensity"/>
+            </rescap:AppLinks>
+            <rescap:SearchTerms>
+              <rescap:Term>Vibration</rescap:Term>
+              <rescap:Term>Haptic</rescap:Term>
+              <rescap:Term>Intensity</rescap:Term>
+            </rescap:SearchTerms>
+          </rescap:SettingsApp>
         </rescap:Extension>
       </Extensions>
     </Application>

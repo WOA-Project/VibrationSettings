@@ -1,8 +1,8 @@
 ﻿<Page
-    x:Class="VibrationSettings.MainPage"
+    x:Class="Vibration.MainPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:local="using:VibrationSettings"
+    xmlns:local="using:Vibration"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
@@ -10,8 +10,8 @@
 
     <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Auto">
         <StackPanel>
-            <StackPanel Padding="24,24,24,0">
-                <TextBlock x:Name="TitleTextBlock" Padding="0,0,0,8" Text="Vibration settings" FontWeight="Bold" FontSize="24" TextWrapping="Wrap"/>
+            <StackPanel Padding="24,56,24,0">
+                <TextBlock x:Name="TitleTextBlock" Padding="0,0,0,8" Text="Vibration" FontWeight="Bold" FontSize="24" TextWrapping="Wrap"/>
                 <RichTextBlock Padding="0,0,0,32">
                     <Paragraph>
                         <Run Text="To make other notification adjustments, "/>
@@ -44,7 +44,7 @@
             <StackPanel Padding="24,24,24,0">
                 <StackPanel Padding="0,0,0,16" Orientation="Horizontal">
                     <FontIcon Glyph="&#xE877;" Margin="0,1,14,0"/>
-                    <TextBlock Text="Hardware vibration settings" FontSize="18" TextWrapping="Wrap" FontWeight="Bold"/>
+                    <TextBlock Text="Hardware vibration" FontSize="18" TextWrapping="Wrap" FontWeight="Bold"/>
                 </StackPanel>
             </StackPanel>
 
