@@ -10,7 +10,7 @@
   <Identity
     Name="LumiaWOA.Vibration"
     Publisher="CN=Windows On Lumia Development Second Party Software 2020"
-    Version="1.0.11.0" />
+    Version="1.0.13.0" />
 
   <mp:PhoneIdentity PhoneProductId="89192fb3-1554-4f20-b544-02197ba72c88" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
